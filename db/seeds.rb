@@ -42,6 +42,19 @@ questions.each do |question|
   Question.create(question)
 end
 
+results = Result.create([
+  {
+    user_id: 1,
+    emoji: "😁",
+    mood: "happy",
+  },
+  {
+    user_id: 2,
+    emoji: "🙂",
+    mood: "pleased",
+  },
+])
+
 vitals = Vital.create([
   { user_id: 1, heart_rate: 80.0, wrist_temperature: 98.6 },
   { user_id: 2, heart_rate: 72.0, wrist_temperature: 97.8 },

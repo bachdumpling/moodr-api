@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates :password, presence: true, allow_nil: true
 
   has_secure_password
+  has_many :results
   has_many :vitals
   has_many :questions
 end
