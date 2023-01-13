@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: %i[ show edit update destroy ]
-  skip_before_action :authorize, only: [:index, :show]
+  skip_before_action :authorize, only: [:index, :show, :create, :update, :destroy]
 
   # GET /results
   def index
@@ -50,13 +50,14 @@ class ResultsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_result
-      @result = Result.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def result_params
-      params.require(:result).permit(:user_id, :emoji, :mood)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_result
+    @result = Result.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def result_params
+    params.permit(:user_id, :emoji, :mood)
+  end
 end

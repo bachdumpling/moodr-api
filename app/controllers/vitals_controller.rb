@@ -1,6 +1,6 @@
 class VitalsController < ApplicationController
   before_action :set_vital, only: %i[ show update destroy ]
-  skip_before_action :authorize, only: [:index, :show]
+  skip_before_action :authorize, only: [:index, :show, :create, :update, :destroy]
 
   # GET /vitals
   def index
@@ -47,6 +47,6 @@ class VitalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vital_params
-      params.fetch(:vital, {})
+      params.permit(:user_id, :wrist_temperature, :heart_rate)
     end
 end

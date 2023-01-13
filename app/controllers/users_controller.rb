@@ -27,8 +27,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    user = User.create!(user_params)
-    session[:user_id] = user.id
+    user = User.create(user_params)
     render json: user, status: :created
   end
 
@@ -59,7 +58,7 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.permit(:username, :password)
+    params.permit(:username, :password, :firstname, :lastname, :email, :age)
   end
 
   def render_not_found
