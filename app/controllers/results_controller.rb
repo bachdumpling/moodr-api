@@ -9,9 +9,12 @@ class ResultsController < ApplicationController
     render json: @results
   end
 
-  # GET /results/1
+  # GET /results/user_id
   def show
-    render json: @result
+    # byebug
+    user = User.find(params[:id])
+    result = user.results
+    render json: result
   end
 
   # GET /results/new
