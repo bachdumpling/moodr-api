@@ -20,21 +20,9 @@ end
 questions = [
   {
     user_id: 1,
-    question_1: "Is there any event affecting your mood today?",
     answer_1: "Yes",
-    question_2: "How does this event affect your thoughts and behavior?",
     answer_2: "Positive",
-    question_3: "Mood Scale",
     answer_3: "5",
-  },
-  {
-    user_id: 1,
-    question_1: "Is there any event affecting your mood today?",
-    answer_1: "No",
-    question_2: "How does this event affect your thoughts and behavior?",
-    answer_2: "Negative",
-    question_3: "Mood Scale",
-    answer_3: "1",
   },
 ]
 
